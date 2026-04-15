@@ -26,6 +26,15 @@ public abstract class Conta {
         }
     }
 
+    public Conta(int numero, double saldo){
+        if(!setNumero(numero)){
+            this.numero = 0;
+        }
+        if(!setSaldo(saldo)){
+            this.saldo = 0;
+        }
+    }
+
     public boolean depositar(double valor){
         if(valor < 0){
 
@@ -36,7 +45,6 @@ public abstract class Conta {
             return true;
         }
     }
-
     public abstract boolean sacar(double valor);
     public abstract double calcularRendimento();
 
