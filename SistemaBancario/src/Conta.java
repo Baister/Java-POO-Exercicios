@@ -26,6 +26,18 @@ public abstract class Conta {
         }
     }
 
+    public boolean depositar(double valor){
+        if(valor < 0){
 
+            System.out.println("Valor inválido");
+            return false;
+        }else{
+            this.saldo += valor;
+            return true;
+        }
+    }
+
+    public abstract boolean sacar(double valor);
+    public abstract double calcularRendimento();
 
 }
